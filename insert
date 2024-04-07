@@ -10,7 +10,6 @@ INSERT INTO Genre (GenreId, ShowHide) VALUES
 (9, 1),
 (10, 0);
 
-
 INSERT INTO Author (AuthorId, FirstName, LastName, Pseudonym) VALUES
 (1, 'Stephen', 'King', NULL),
 (2, 'J.K.', 'Rowling', NULL),
@@ -22,7 +21,6 @@ INSERT INTO Author (AuthorId, FirstName, LastName, Pseudonym) VALUES
 (8, 'Jane', 'Austen', NULL),
 (9, 'Neil', 'Gaiman', NULL),
 (10, 'Philip', 'Pullman', NULL);
-
 
 INSERT INTO Publisher (PublisherId, Name, Status) VALUES
 (1, 'Penguin Random House', 'Active'),
@@ -36,7 +34,6 @@ INSERT INTO Publisher (PublisherId, Name, Status) VALUES
 (9, 'Bloomsbury Publishing', 'Active'),
 (10, 'Wiley', 'Active');
 
-
 INSERT INTO Review (ReviewId, Rating, Content, UserName, Hide) VALUES
 (1, 4.5, 'Great book, highly recommended!', 'booklover123', 0),
 (2, 3.8, 'Interesting read, but not my favorite.', 'reader92', 0),
@@ -48,7 +45,6 @@ INSERT INTO Review (ReviewId, Rating, Content, UserName, Hide) VALUES
 (8, 4.0, 'Classic literature, a must-read.', 'literaturelover', 0),
 (9, 4.6, 'Fantasy at its finest!', 'fantasyfan', 0),
 (10, 4.8, 'Compelling characters, engaging plot.', 'bookworm', 0);
-
 
 INSERT INTO Book (BookId, AuthorId, GenreId, Description, ReviewId, PublicationYear, PublisherId, Status) VALUES
 (1, 1, 5, 'A chilling tale of horror and suspense.', 1, 1986, 1, 'Available'),
@@ -62,7 +58,6 @@ INSERT INTO Book (BookId, AuthorId, GenreId, Description, ReviewId, PublicationY
 (9, 9, 9, 'Modern mythological fantasy.', 9, 2001, 8, 'Available'),
 (10, 10, 9, 'Epic fantasy series set in a parallel universe.', 10, 1995, 9, 'Available');
 
-
 INSERT INTO Copy (CopyId, BookId, Status, LibraryId, Usage) VALUES
 (1, 1, 'Available', 1, 0.5),
 (2, 1, 'Available', 2, 0.7),
@@ -75,7 +70,6 @@ INSERT INTO Copy (CopyId, BookId, Status, LibraryId, Usage) VALUES
 (9, 7, 'Available', 2, 0.1),
 (10, 8, 'Available', 3, 0.3);
 
-
 INSERT INTO User (UserId, Status, Login, Type, LastName, FirstName, PWIndex, Sms, Email) VALUES
 (1, 'Active', 'user1', 'Student', 'Smith', 'John', '12345', '123456789', 'user1@example.com'),
 (2, 'Active', 'user2', 'Faculty', 'Johnson', 'Emily', '54321', '987654321', 'user2@example.com'),
@@ -85,4 +79,76 @@ INSERT INTO User (UserId, Status, Login, Type, LastName, FirstName, PWIndex, Sms
 (6, 'Active', 'user6', 'Alumni', 'Miller', 'Daniel', '24680', '567890123', 'user6@example.com'),
 (7, 'Active', 'user7', 'Student', 'Wilson', 'Emma', '11223', '101010101', 'user7@example.com'),
 (8, 'Active', 'user8', 'Faculty', 'Moore', 'Matthew', '33445', '202020202', 'user8@example.com'),
-(9, 'Active', 'user9', 'Alumni', 'Taylor', 'Olivia', '55667', '303030303', 'user9@example.com
+(9, 'Active', 'user9', 'Alumni', 'Taylor', 'Olivia', '55667', '303030303', 'user9@example.com'),
+(10, 'Active', 'user10', 'Student', 'Anderson', 'Andrew', '77889', '404040404', 'user10@example.com');
+
+INSERT INTO Library (LibraryId, LocationId, OpeningHoursId, Name, KeyField) VALUES
+(1, 1, 1, 'Central Library', 'Central'),
+(2, 2, 2, 'Westside Library', 'Westside'),
+(3, 3, 3, 'East End Library', 'East End');
+
+INSERT INTO Location (LocationId, City, PostalCode, Province) VALUES
+(1, 'New York', '10001', 'New York'),
+(2, 'Los Angeles', '90001', 'California'),
+(3, 'Chicago', '60601', 'Illinois');
+
+INSERT INTO OpeningHours (OpeningHoursId, LibraryId, DayOfWeek, Hours, Status) VALUES
+(1, 1, 'Monday', '9:00 AM - 8:00 PM', 'Open'),
+(2, 1, 'Tuesday', '9:00 AM - 8:00 PM', 'Open'),
+(3, 1, 'Wednesday', '9:00 AM - 8:00 PM', 'Open'),
+(4, 1, 'Thursday', '9:00 AM - 8:00 PM', 'Open'),
+(5, 1, 'Friday', '9:00 AM - 6:00 PM', 'Open'),
+(6, 1, 'Saturday', '10:00 AM - 6:00 PM', 'Open'),
+(7, 1, 'Sunday', 'Closed', 'Closed'),
+(8, 2, 'Monday', '10:00 AM - 7:00 PM', 'Open'),
+(9, 2, 'Tuesday', '10:00 AM - 7:00 PM', 'Open'),
+(10, 2, 'Wednesday', '10:00 AM - 7:00 PM', 'Open');
+
+INSERT INTO Order (OrderId, CopyId, UserId, Rental, Date, PickupTime) VALUES
+(1, 1, 1, 1, '2024-04-01', '10:00:00'),
+(2, 2, 2, 1, '2024-04-02', '11:00:00'),
+(3, 3, 3, 1, '2024-04-03', '12:00:00'),
+(4, 4, 4, 1, '2024-04-04', '13:00:00'),
+(5, 5, 5, 1, '2024-04-05', '14:00:00'),
+(6, 6, 6, 1, '2024-04-06', '15:00:00'),
+(7, 7, 7, 1, '2024-04-07', '16:00:00'),
+(8, 8, 8, 1, '2024-04-08', '17:00:00'),
+(9, 9, 9, 1, '2024-04-09', '18:00:00'),
+(10, 10, 10, 1, '2024-04-10', '19:00:00');
+
+INSERT INTO Extension (ExtensionId, RentalId, Type, ExtensionTime) VALUES
+(1, 1, 'Standard', 7),
+(2, 2, 'Standard', 7),
+(3, 3, 'Standard', 7),
+(4, 4, 'Standard', 7),
+(5, 5, 'Standard', 7),
+(6, 6, 'Standard', 7),
+(7, 7, 'Standard', 7),
+(8, 8, 'Standard', 7),
+(9, 9, 'Standard', 7),
+(10, 10, 'Standard', 7);
+
+INSERT INTO Notification (NotificationId, ExtensionId, Content, Type, UserId) VALUES
+(1, 1, 'Your book rental has been extended.', 'Info', 1),
+(2, 2, 'Your book rental has been extended.', 'Info', 2),
+(3, 3, 'Your book rental has been extended.', 'Info', 3),
+(4, 4, 'Your book rental has been extended.', 'Info', 4),
+(5, 5, 'Your book rental has been extended.', 'Info', 5),
+(6, 6, 'Your book rental has been extended.', 'Info', 6),
+(7, 7, 'Your book rental has been extended.', 'Info', 7),
+(8, 8, 'Your book rental has been extended.', 'Info', 8),
+(9, 9, 'Your book rental has been extended.', 'Info', 9),
+(10, 10, 'Your book rental has been extended.', 'Info', 10);
+
+INSERT INTO Rental (RentalId, OrderId, CopyId, RentalDate, RentalTime, ReturnDate, ExtensionId) VALUES
+(1, 1, 1, '2024-04-01', '10:00:00', '2024-04-08', 1),
+(2, 2, 2, '2024-04-02', '11:00:00', '2024-04-09', 2),
+(3, 3, 3, '2024-04-03', '12:00:00', '2024-04-10', 3),
+(4, 4, 4, '2024-04-04', '13:00:00', '2024-04-11', 4),
+(5, 5, 5, '2024-04-05', '14:00:00', '2024-04-12', 5),
+(6, 6, 6, '2024-04-06', '15:00:00', '2024-04-13', 6),
+(7, 7, 7, '2024-04-07', '16:00:00', '2024-04-14', 7),
+(8, 8, 8, '2024-04-08', '17:00:00', '2024-04-15', 8),
+(9, 9, 9, '2024-04-09', '18:00:00', '2024-04-16', 9),
+(10, 10, 10, '2024-04-10', '19:00:00', '2024-04-17', 10);
+
