@@ -1,0 +1,88 @@
+INSERT INTO Genre (GenreId, ShowHide) VALUES
+(1, 1),
+(2, 0),
+(3, 1),
+(4, 0),
+(5, 1),
+(6, 0),
+(7, 1),
+(8, 0),
+(9, 1),
+(10, 0);
+
+
+INSERT INTO Author (AuthorId, FirstName, LastName, Pseudonym) VALUES
+(1, 'Stephen', 'King', NULL),
+(2, 'J.K.', 'Rowling', NULL),
+(3, 'George', 'Orwell', NULL),
+(4, 'Agatha', 'Christie', NULL),
+(5, 'Haruki', 'Murakami', NULL),
+(6, 'Terry', 'Pratchett', NULL),
+(7, 'Ernest', 'Hemingway', NULL),
+(8, 'Jane', 'Austen', NULL),
+(9, 'Neil', 'Gaiman', NULL),
+(10, 'Philip', 'Pullman', NULL);
+
+
+INSERT INTO Publisher (PublisherId, Name, Status) VALUES
+(1, 'Penguin Random House', 'Active'),
+(2, 'HarperCollins', 'Active'),
+(3, 'Simon & Schuster', 'Active'),
+(4, 'Hachette Livre', 'Active'),
+(5, 'Macmillan Publishers', 'Active'),
+(6, 'Scholastic Corporation', 'Active'),
+(7, 'Pearson Education', 'Active'),
+(8, 'Springer Nature', 'Active'),
+(9, 'Bloomsbury Publishing', 'Active'),
+(10, 'Wiley', 'Active');
+
+
+INSERT INTO Review (ReviewId, Rating, Content, UserName, Hide) VALUES
+(1, 4.5, 'Great book, highly recommended!', 'booklover123', 0),
+(2, 3.8, 'Interesting read, but not my favorite.', 'reader92', 0),
+(3, 5.0, 'Absolutely loved it!', 'avidreader', 0),
+(4, 4.2, 'Solid mystery novel.', 'mysteryfanatic', 0),
+(5, 4.7, 'Intriguing story, well-written.', 'fictionlover', 0),
+(6, 3.5, 'Not my cup of tea.', 'casualreader', 0),
+(7, 4.9, 'Captivating from start to finish.', 'pageturner', 0),
+(8, 4.0, 'Classic literature, a must-read.', 'literaturelover', 0),
+(9, 4.6, 'Fantasy at its finest!', 'fantasyfan', 0),
+(10, 4.8, 'Compelling characters, engaging plot.', 'bookworm', 0);
+
+
+INSERT INTO Book (BookId, AuthorId, GenreId, Description, ReviewId, PublicationYear, PublisherId, Status) VALUES
+(1, 1, 5, 'A chilling tale of horror and suspense.', 1, 1986, 1, 'Available'),
+(2, 2, 9, 'Magical adventures in a wizarding world.', 2, 1997, 1, 'Available'),
+(3, 3, 6, 'A dystopian novel set in a totalitarian society.', 3, 1949, 2, 'Available'),
+(4, 4, 7, 'Classic murder mystery featuring Hercule Poirot.', 4, 1926, 3, 'Available'),
+(5, 5, 5, 'Surreal narrative exploring themes of loneliness and identity.', 5, 1994, 4, 'Available'),
+(6, 6, 10, 'Whimsical fantasy set in the Discworld.', 6, 1983, 5, 'Available'),
+(7, 7, 8, 'Hemingway''s classic tale of love and war.', 7, 1929, 6, 'Available'),
+(8, 8, 8, 'Regency-era romance novel.', 8, 1813, 7, 'Available'),
+(9, 9, 9, 'Modern mythological fantasy.', 9, 2001, 8, 'Available'),
+(10, 10, 9, 'Epic fantasy series set in a parallel universe.', 10, 1995, 9, 'Available');
+
+
+INSERT INTO Copy (CopyId, BookId, Status, LibraryId, Usage) VALUES
+(1, 1, 'Available', 1, 0.5),
+(2, 1, 'Available', 2, 0.7),
+(3, 2, 'Available', 1, 0.3),
+(4, 2, 'Available', 3, 0.6),
+(5, 3, 'Available', 2, 0.4),
+(6, 4, 'Available', 1, 0.8),
+(7, 5, 'Available', 3, 0.2),
+(8, 6, 'Available', 1, 0.9),
+(9, 7, 'Available', 2, 0.1),
+(10, 8, 'Available', 3, 0.3);
+
+
+INSERT INTO User (UserId, Status, Login, Type, LastName, FirstName, PWIndex, Sms, Email) VALUES
+(1, 'Active', 'user1', 'Student', 'Smith', 'John', '12345', '123456789', 'user1@example.com'),
+(2, 'Active', 'user2', 'Faculty', 'Johnson', 'Emily', '54321', '987654321', 'user2@example.com'),
+(3, 'Active', 'user3', 'Alumni', 'Williams', 'Michael', '67890', '456789012', 'user3@example.com'),
+(4, 'Active', 'user4', 'Student', 'Brown', 'Jessica', '09876', '321098765', 'user4@example.com'),
+(5, 'Active', 'user5', 'Faculty', 'Davis', 'Sophia', '13579', '789012345', 'user5@example.com'),
+(6, 'Active', 'user6', 'Alumni', 'Miller', 'Daniel', '24680', '567890123', 'user6@example.com'),
+(7, 'Active', 'user7', 'Student', 'Wilson', 'Emma', '11223', '101010101', 'user7@example.com'),
+(8, 'Active', 'user8', 'Faculty', 'Moore', 'Matthew', '33445', '202020202', 'user8@example.com'),
+(9, 'Active', 'user9', 'Alumni', 'Taylor', 'Olivia', '55667', '303030303', 'user9@example.com
